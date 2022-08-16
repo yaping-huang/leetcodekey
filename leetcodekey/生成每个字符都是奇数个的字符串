@@ -1,0 +1,12 @@
+class Solution {
+    public String generateTheString(int n) {
+        StringBuffer s=new StringBuffer();
+        if(n%2!=0){
+            s.append("a".repeat(n));
+        }else{
+            s.append("a".repeat(n-1)).append("b");
+        }
+        String s1 = s.toString();
+        return s1;
+    }
+}

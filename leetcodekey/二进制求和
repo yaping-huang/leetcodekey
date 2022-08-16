@@ -1,0 +1,17 @@
+class Solution {
+    public String addBinary(String a, String b) {
+        int aLast = a.length() - 1, bLast = b.length() - 1;
+        StringBuilder res = new StringBuilder();
+        int carry = 0;
+        while (aLast >= 0 || bLast >= 0) {
+            int aVal = 0, bVal = 0;
+            if (aLast >= 0) aVal = a.charAt(aLast--) - '0';
+            if (bLast >= 0) bVal = b.charAt(bLast--) - '0';
+            res.append((aVal + bVal + carry) % 2);
+            if ((aVal + bVal + carry) > 1) carry = 1;
+            else carry = 0;
+        }
+        if (carry == 1) res.append(carry);
+        return res.reverse().toString();
+    }
+}

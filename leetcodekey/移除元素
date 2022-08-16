@@ -1,0 +1,14 @@
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        int left;
+        int right=nums.length-1;
+        for(left=0;left!=right;){
+            if(nums[left]==val&&nums[right]!=val){
+                nums[left]=nums[right];
+                left++;
+            }
+            right--;
+        }
+        return left+1;
+    }
+}
